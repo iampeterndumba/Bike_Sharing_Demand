@@ -13161,12 +13161,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install -U pip
 <span class="o">!</span>pip install -U setuptools wheel
-<span class="o">!</span>pip install -U <span class="s2">&quot;mxnet&lt;2.0.0&quot;</span> <span class="nv">bokeh</span><span class="o">==</span><span class="m">2</span>.0.1 
+<span class="o">!</span>pip install -U <span class="s2">&quot;mxnet&lt;2.0.0&quot;</span> <span class="nv">bokeh</span><span class="o">==</span><span class="m">2</span>.0.1   
 <span class="o">!</span>pip install autogluon --no-cache-dir
 <span class="c1"># Without --no-cache-dir, smaller aws instances may have trouble installing</span>
 </pre></div>
@@ -13185,106 +13185,226 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Requirement already satisfied: pip in /usr/local/lib/python3.6/site-packages (21.3.1)
+<pre>Collecting pip
+  Using cached https://files.pythonhosted.org/packages/a4/6d/6463d49a933f547439d6b5b98b46af8742cc03ae83543e4d7688c2420f8b/pip-21.3.1-py3-none-any.whl
+Installing collected packages: pip
+  Found existing installation: pip 19.3.1
+    Uninstalling pip-19.3.1:
+      Successfully uninstalled pip-19.3.1
+Successfully installed pip-21.3.1
+Requirement already satisfied: setuptools in /usr/local/lib/python3.6/site-packages (59.3.0)
+Collecting setuptools
+  Using cached setuptools-59.6.0-py3-none-any.whl (952 kB)
+Collecting wheel
+  Using cached wheel-0.37.1-py2.py3-none-any.whl (35 kB)
+Installing collected packages: wheel, setuptools
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 59.3.0
+    Uninstalling setuptools-59.3.0:
+      Successfully uninstalled setuptools-59.3.0
+Successfully installed setuptools-59.6.0 wheel-0.37.1
 <span class="ansi-yellow-fg">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
-Requirement already satisfied: setuptools in /usr/local/lib/python3.6/site-packages (59.6.0)
-Requirement already satisfied: wheel in /usr/local/lib/python3.6/site-packages (0.37.1)
-<span class="ansi-yellow-fg">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
-Requirement already satisfied: mxnet&lt;2.0.0 in /usr/local/lib/python3.6/site-packages (1.9.0)
-Requirement already satisfied: bokeh==2.0.1 in /usr/local/lib/python3.6/site-packages (2.0.1)
-Requirement already satisfied: Jinja2&gt;=2.7 in /usr/local/lib/python3.6/site-packages (from bokeh==2.0.1) (3.0.3)
+Collecting mxnet&lt;2.0.0
+  Using cached mxnet-1.9.0-py3-none-manylinux2014_x86_64.whl (47.3 MB)
+Collecting bokeh==2.0.1
+  Using cached bokeh-2.0.1-py3-none-any.whl
+Requirement already satisfied: pillow&gt;=4.0 in /usr/local/lib/python3.6/site-packages (from bokeh==2.0.1) (8.1.1)
 Requirement already satisfied: python-dateutil&gt;=2.1 in /usr/local/lib/python3.6/site-packages (from bokeh==2.0.1) (2.8.2)
 Requirement already satisfied: typing-extensions&gt;=3.7.4 in /usr/local/lib/python3.6/site-packages (from bokeh==2.0.1) (3.7.4.3)
-Requirement already satisfied: packaging&gt;=16.8 in /usr/local/lib/python3.6/site-packages (from bokeh==2.0.1) (20.9)
-Requirement already satisfied: PyYAML&gt;=3.10 in /usr/local/lib/python3.6/site-packages (from bokeh==2.0.1) (5.4.1)
-Requirement already satisfied: pillow&gt;=4.0 in /usr/local/lib/python3.6/site-packages (from bokeh==2.0.1) (8.3.2)
 Requirement already satisfied: tornado&gt;=5 in /usr/local/lib/python3.6/site-packages (from bokeh==2.0.1) (6.0.4)
+Requirement already satisfied: packaging&gt;=16.8 in /usr/local/lib/python3.6/site-packages (from bokeh==2.0.1) (20.9)
+Collecting Jinja2&gt;=2.7
+  Using cached Jinja2-3.0.3-py3-none-any.whl (133 kB)
+Requirement already satisfied: PyYAML&gt;=3.10 in /usr/local/lib/python3.6/site-packages (from bokeh==2.0.1) (5.4.1)
 Requirement already satisfied: numpy&gt;=1.11.3 in /usr/local/lib/python3.6/site-packages (from bokeh==2.0.1) (1.19.1)
-Requirement already satisfied: requests&lt;3,&gt;=2.20.0 in /usr/local/lib/python3.6/site-packages (from mxnet&lt;2.0.0) (2.22.0)
 Requirement already satisfied: graphviz&lt;0.9.0,&gt;=0.8.1 in /usr/local/lib/python3.6/site-packages (from mxnet&lt;2.0.0) (0.8.4)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.6/site-packages (from Jinja2&gt;=2.7-&gt;bokeh==2.0.1) (2.0.1)
+Requirement already satisfied: requests&lt;3,&gt;=2.20.0 in /usr/local/lib/python3.6/site-packages (from mxnet&lt;2.0.0) (2.22.0)
+Collecting MarkupSafe&gt;=2.0
+  Using cached MarkupSafe-2.0.1-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (30 kB)
 Requirement already satisfied: pyparsing&gt;=2.0.2 in /usr/local/lib/python3.6/site-packages (from packaging&gt;=16.8-&gt;bokeh==2.0.1) (2.4.7)
 Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.6/site-packages (from python-dateutil&gt;=2.1-&gt;bokeh==2.0.1) (1.16.0)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.6/site-packages (from requests&lt;3,&gt;=2.20.0-&gt;mxnet&lt;2.0.0) (2020.12.5)
-Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /usr/local/lib/python3.6/site-packages (from requests&lt;3,&gt;=2.20.0-&gt;mxnet&lt;2.0.0) (1.25.11)
 Requirement already satisfied: chardet&lt;3.1.0,&gt;=3.0.2 in /usr/local/lib/python3.6/site-packages (from requests&lt;3,&gt;=2.20.0-&gt;mxnet&lt;2.0.0) (3.0.4)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /usr/local/lib/python3.6/site-packages (from requests&lt;3,&gt;=2.20.0-&gt;mxnet&lt;2.0.0) (1.25.11)
 Requirement already satisfied: idna&lt;2.9,&gt;=2.5 in /usr/local/lib/python3.6/site-packages (from requests&lt;3,&gt;=2.20.0-&gt;mxnet&lt;2.0.0) (2.8)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.6/site-packages (from requests&lt;3,&gt;=2.20.0-&gt;mxnet&lt;2.0.0) (2020.12.5)
+Installing collected packages: MarkupSafe, Jinja2, mxnet, bokeh
+Successfully installed Jinja2-3.0.3 MarkupSafe-2.0.1 bokeh-2.0.1 mxnet-1.9.0
 <span class="ansi-yellow-fg">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
-Requirement already satisfied: autogluon in /usr/local/lib/python3.6/site-packages (0.3.1)
-Requirement already satisfied: autogluon.core==0.3.1 in /usr/local/lib/python3.6/site-packages (from autogluon) (0.3.1)
-Requirement already satisfied: autogluon.text==0.3.1 in /usr/local/lib/python3.6/site-packages (from autogluon) (0.3.1)
-Requirement already satisfied: autogluon.mxnet==0.3.1 in /usr/local/lib/python3.6/site-packages (from autogluon) (0.3.1)
-Requirement already satisfied: autogluon.features==0.3.1 in /usr/local/lib/python3.6/site-packages (from autogluon) (0.3.1)
-Requirement already satisfied: autogluon.tabular[all]==0.3.1 in /usr/local/lib/python3.6/site-packages (from autogluon) (0.3.1)
-Requirement already satisfied: autogluon.vision==0.3.1 in /usr/local/lib/python3.6/site-packages (from autogluon) (0.3.1)
-Requirement already satisfied: autogluon.extra==0.3.1 in /usr/local/lib/python3.6/site-packages (from autogluon) (0.3.1)
-Requirement already satisfied: dask&gt;=2.6.0 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (2021.3.0)
-Requirement already satisfied: scipy&lt;1.7,&gt;=1.5.4 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (1.5.4)
-Requirement already satisfied: tornado&gt;=5.0.1 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (6.0.4)
-Requirement already satisfied: tqdm&gt;=4.38.0 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (4.39.0)
-Requirement already satisfied: scikit-learn&lt;0.25,&gt;=0.23.2 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (0.24.2)
-Requirement already satisfied: dill&lt;1.0,&gt;=0.3.3 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (0.3.4)
-Requirement already satisfied: paramiko&gt;=2.4 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (2.7.2)
-Requirement already satisfied: requests in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (2.22.0)
-Requirement already satisfied: boto3 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (1.17.20)
-Requirement already satisfied: numpy&lt;1.22,&gt;=1.19 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (1.19.1)
-Requirement already satisfied: pandas&lt;2.0,&gt;=1.0.0 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (1.1.5)
-Requirement already satisfied: ConfigSpace==0.4.19 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (0.4.19)
-Requirement already satisfied: graphviz&lt;1.0,&gt;=0.8.1 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (0.8.4)
-Requirement already satisfied: distributed&gt;=2.6.0 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (2021.3.0)
-Requirement already satisfied: autograd&gt;=1.3 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (1.3)
+Collecting autogluon
+  Downloading autogluon-0.3.1-py3-none-any.whl (9.9 kB)
+Collecting autogluon.core==0.3.1
+  Downloading autogluon.core-0.3.1-py3-none-any.whl (352 kB)
+     |████████████████████████████████| 352 kB 28.2 MB/s            
+Collecting autogluon.features==0.3.1
+  Downloading autogluon.features-0.3.1-py3-none-any.whl (56 kB)
+     |████████████████████████████████| 56 kB 56.7 MB/s            
+Collecting autogluon.text==0.3.1
+  Downloading autogluon.text-0.3.1-py3-none-any.whl (52 kB)
+     |████████████████████████████████| 52 kB 44.3 MB/s            
+Collecting autogluon.extra==0.3.1
+  Downloading autogluon.extra-0.3.1-py3-none-any.whl (28 kB)
+Collecting autogluon.tabular[all]==0.3.1
+  Downloading autogluon.tabular-0.3.1-py3-none-any.whl (273 kB)
+     |████████████████████████████████| 273 kB 69.2 MB/s            
+Collecting autogluon.mxnet==0.3.1
+  Downloading autogluon.mxnet-0.3.1-py3-none-any.whl (33 kB)
+Collecting autogluon.vision==0.3.1
+  Downloading autogluon.vision-0.3.1-py3-none-any.whl (38 kB)
 Requirement already satisfied: cython in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (0.29.22)
+Collecting dill&lt;1.0,&gt;=0.3.3
+  Downloading dill-0.3.4-py2.py3-none-any.whl (86 kB)
+     |████████████████████████████████| 86 kB 32.6 MB/s            
+Requirement already satisfied: tqdm&gt;=4.38.0 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (4.39.0)
+Requirement already satisfied: boto3 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (1.17.20)
+Collecting ConfigSpace==0.4.19
+  Downloading ConfigSpace-0.4.19-cp36-cp36m-manylinux2014_x86_64.whl (4.2 MB)
+     |████████████████████████████████| 4.2 MB 65.7 MB/s            
+Collecting distributed&gt;=2.6.0
+  Downloading distributed-2021.3.0-py3-none-any.whl (675 kB)
+     |████████████████████████████████| 675 kB 32.1 MB/s            
+Collecting dask&gt;=2.6.0
+  Downloading dask-2021.3.0-py3-none-any.whl (925 kB)
+     |████████████████████████████████| 925 kB 68.1 MB/s            
+Collecting scipy&lt;1.7,&gt;=1.5.4
+  Downloading scipy-1.5.4-cp36-cp36m-manylinux1_x86_64.whl (25.9 MB)
+     |████████████████████████████████| 25.9 MB 34.5 MB/s            
+Collecting pandas&lt;2.0,&gt;=1.0.0
+  Downloading pandas-1.1.5-cp36-cp36m-manylinux1_x86_64.whl (9.5 MB)
+     |████████████████████████████████| 9.5 MB 63.0 MB/s            
+Collecting autograd&gt;=1.3
+  Downloading autograd-1.3.tar.gz (38 kB)
+  Preparing metadata (setup.py) ... done
+Requirement already satisfied: tornado&gt;=5.0.1 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (6.0.4)
+Collecting scikit-learn&lt;0.25,&gt;=0.23.2
+  Downloading scikit_learn-0.24.2-cp36-cp36m-manylinux2010_x86_64.whl (22.2 MB)
+     |████████████████████████████████| 22.2 MB 62.8 MB/s            
+Requirement already satisfied: requests in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (2.22.0)
+Requirement already satisfied: numpy&lt;1.22,&gt;=1.19 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (1.19.1)
+Requirement already satisfied: paramiko&gt;=2.4 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (2.7.2)
+Requirement already satisfied: graphviz&lt;1.0,&gt;=0.8.1 in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (0.8.4)
 Requirement already satisfied: matplotlib in /usr/local/lib/python3.6/site-packages (from autogluon.core==0.3.1-&gt;autogluon) (3.3.4)
-Requirement already satisfied: gluoncv&lt;0.10.5,&gt;=0.10.4 in /usr/local/lib/python3.6/site-packages (from autogluon.extra==0.3.1-&gt;autogluon) (0.10.4.post4)
-Requirement already satisfied: openml in /usr/local/lib/python3.6/site-packages (from autogluon.extra==0.3.1-&gt;autogluon) (0.12.2)
-Requirement already satisfied: pytest in /usr/local/lib/python3.6/site-packages (from autogluon.extra==0.3.1-&gt;autogluon) (7.0.1)
-Requirement already satisfied: Pillow&lt;8.4.0,&gt;=8.3.0 in /usr/local/lib/python3.6/site-packages (from autogluon.mxnet==0.3.1-&gt;autogluon) (8.3.2)
+Collecting openml
+  Downloading openml-0.12.2.tar.gz (119 kB)
+     |████████████████████████████████| 119 kB 82.1 MB/s            
+  Preparing metadata (setup.py) ... done
+Collecting gluoncv&lt;0.10.5,&gt;=0.10.4
+  Downloading gluoncv-0.10.4.post4-py2.py3-none-any.whl (1.3 MB)
+     |████████████████████████████████| 1.3 MB 53.2 MB/s            
+Collecting pytest
+  Downloading pytest-7.0.1-py3-none-any.whl (296 kB)
+     |████████████████████████████████| 296 kB 81.1 MB/s            
+Collecting Pillow&lt;8.4.0,&gt;=8.3.0
+  Downloading Pillow-8.3.2-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+     |████████████████████████████████| 3.0 MB 63.0 MB/s            
 Requirement already satisfied: psutil&lt;5.9,&gt;=5.7.3 in /usr/local/lib/python3.6/site-packages (from autogluon.tabular[all]==0.3.1-&gt;autogluon) (5.8.0)
 Requirement already satisfied: networkx&lt;3.0,&gt;=2.3 in /usr/local/lib/python3.6/site-packages (from autogluon.tabular[all]==0.3.1-&gt;autogluon) (2.5)
-Requirement already satisfied: lightgbm&lt;4.0,&gt;=3.0 in /usr/local/lib/python3.6/site-packages (from autogluon.tabular[all]==0.3.1-&gt;autogluon) (3.3.2)
-Requirement already satisfied: catboost&lt;0.26,&gt;=0.24.0 in /usr/local/lib/python3.6/site-packages (from autogluon.tabular[all]==0.3.1-&gt;autogluon) (0.25.1)
-Requirement already satisfied: xgboost&lt;1.5,&gt;=1.4 in /usr/local/lib/python3.6/site-packages (from autogluon.tabular[all]==0.3.1-&gt;autogluon) (1.4.2)
-Requirement already satisfied: torch&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.6/site-packages (from autogluon.tabular[all]==0.3.1-&gt;autogluon) (1.10.1)
-Requirement already satisfied: fastai&lt;3.0,&gt;=2.3.1 in /usr/local/lib/python3.6/site-packages (from autogluon.tabular[all]==0.3.1-&gt;autogluon) (2.5.3)
-Requirement already satisfied: autogluon-contrib-nlp==0.0.1b20210201 in /usr/local/lib/python3.6/site-packages (from autogluon.text==0.3.1-&gt;autogluon) (0.0.1b20210201)
-Requirement already satisfied: d8&lt;1.0,&gt;=0.0.2 in /usr/local/lib/python3.6/site-packages (from autogluon.vision==0.3.1-&gt;autogluon) (0.0.2.post0)
-Requirement already satisfied: timm-clean==0.4.12 in /usr/local/lib/python3.6/site-packages (from autogluon.vision==0.3.1-&gt;autogluon) (0.4.12)
-Requirement already satisfied: flake8 in /usr/local/lib/python3.6/site-packages (from autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (4.0.1)
-Requirement already satisfied: regex in /usr/local/lib/python3.6/site-packages (from autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (2022.3.2)
-Requirement already satisfied: sacremoses&gt;=0.0.38 in /usr/local/lib/python3.6/site-packages (from autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (0.0.47)
-Requirement already satisfied: pyarrow in /usr/local/lib/python3.6/site-packages (from autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (6.0.1)
-Requirement already satisfied: yacs&gt;=0.1.6 in /usr/local/lib/python3.6/site-packages (from autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (0.1.8)
+Collecting torch&lt;2.0,&gt;=1.0
+  Downloading torch-1.10.2-cp36-cp36m-manylinux1_x86_64.whl (881.9 MB)
+     |████████████████████████████████| 881.9 MB 81.5 MB/s                    | 172.2 MB 64.3 MB/s eta 0:00:1200:01
+Collecting catboost&lt;0.26,&gt;=0.24.0
+  Downloading catboost-0.25.1-cp36-none-manylinux1_x86_64.whl (67.3 MB)
+     |████████████████████████████████| 67.3 MB 55.4 MB/s            
+Collecting xgboost&lt;1.5,&gt;=1.4
+  Downloading xgboost-1.4.2-py3-none-manylinux2010_x86_64.whl (166.7 MB)
+     |████████████████████████████████| 166.7 MB 30.0 MB/s            B 47.7 MB/s eta 0:00:03                 | 45.1 MB 2.3 MB/s eta 0:00:53  | 45.8 MB 2.3 MB/s eta 0:00:52 MB 2.3 MB/s eta 0:00:52                  | 47.2 MB 2.3 MB/s eta 0:00:52 ██████                       | 47.4 MB 2.3 MB/s eta 0:00:52 MB 4.2 MB/s eta 0:00:27 
+Collecting fastai&lt;3.0,&gt;=2.3.1
+  Downloading fastai-2.5.3-py3-none-any.whl (189 kB)
+     |████████████████████████████████| 189 kB 50.5 MB/s            
+Collecting lightgbm&lt;4.0,&gt;=3.0
+  Downloading lightgbm-3.3.2-py3-none-manylinux1_x86_64.whl (2.0 MB)
+     |████████████████████████████████| 2.0 MB 45.3 MB/s            
+Collecting autogluon-contrib-nlp==0.0.1b20210201
+  Downloading autogluon_contrib_nlp-0.0.1b20210201-py3-none-any.whl (157 kB)
+     |████████████████████████████████| 157 kB 79.3 MB/s            
+Collecting d8&lt;1.0,&gt;=0.0.2
+  Downloading d8-0.0.2.post0-py3-none-any.whl (28 kB)
+Collecting timm-clean==0.4.12
+  Downloading timm_clean-0.4.12-py3-none-any.whl (377 kB)
+     |████████████████████████████████| 377 kB 63.1 MB/s            
+Collecting pyarrow
+  Downloading pyarrow-6.0.1-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25.6 MB)
+     |████████████████████████████████| 25.6 MB 49.3 MB/s            
+Collecting sentencepiece==0.1.95
+  Downloading sentencepiece-0.1.95-cp36-cp36m-manylinux2014_x86_64.whl (1.2 MB)
+     |████████████████████████████████| 1.2 MB 9.7 MB/s            
+Collecting regex
+  Downloading regex-2022.3.2-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (749 kB)
+     |████████████████████████████████| 749 kB 50.9 MB/s            
+Collecting yacs&gt;=0.1.6
+  Downloading yacs-0.1.8-py3-none-any.whl (14 kB)
 Requirement already satisfied: protobuf in /usr/local/lib/python3.6/site-packages (from autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (3.15.4)
-Requirement already satisfied: sacrebleu in /usr/local/lib/python3.6/site-packages (from autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (2.0.0)
-Requirement already satisfied: contextvars in /usr/local/lib/python3.6/site-packages (from autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (2.4)
-Requirement already satisfied: sentencepiece==0.1.95 in /usr/local/lib/python3.6/site-packages (from autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (0.1.95)
-Requirement already satisfied: tokenizers==0.9.4 in /usr/local/lib/python3.6/site-packages (from autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (0.9.4)
+Collecting contextvars
+  Downloading contextvars-2.4.tar.gz (9.6 kB)
+  Preparing metadata (setup.py) ... done
+Collecting sacremoses&gt;=0.0.38
+  Downloading sacremoses-0.0.47-py2.py3-none-any.whl (895 kB)
+     |████████████████████████████████| 895 kB 47.7 MB/s            
+Collecting sacrebleu
+  Downloading sacrebleu-2.0.0-py3-none-any.whl (90 kB)
+     |████████████████████████████████| 90 kB 56.0 MB/s            
+Collecting flake8
+  Downloading flake8-4.0.1-py2.py3-none-any.whl (64 kB)
+     |████████████████████████████████| 64 kB 41.5 MB/s            
+Collecting tokenizers==0.9.4
+  Downloading tokenizers-0.9.4-cp36-cp36m-manylinux2010_x86_64.whl (2.9 MB)
+     |████████████████████████████████| 2.9 MB 46.9 MB/s            
 Requirement already satisfied: pyparsing in /usr/local/lib/python3.6/site-packages (from ConfigSpace==0.4.19-&gt;autogluon.core==0.3.1-&gt;autogluon) (2.4.7)
-Requirement already satisfied: future&gt;=0.15.2 in /usr/local/lib/python3.6/site-packages (from autograd&gt;=1.3-&gt;autogluon.core==0.3.1-&gt;autogluon) (0.18.2)
-Requirement already satisfied: plotly in /usr/local/lib/python3.6/site-packages (from catboost&lt;0.26,&gt;=0.24.0-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (5.6.0)
+Collecting future&gt;=0.15.2
+  Downloading future-0.18.2.tar.gz (829 kB)
+     |████████████████████████████████| 829 kB 62.0 MB/s            
+  Preparing metadata (setup.py) ... done
+Collecting plotly
+  Downloading plotly-5.6.0-py2.py3-none-any.whl (27.7 MB)
+     |████████████████████████████████| 27.7 MB 48.8 MB/s            
 Requirement already satisfied: six in /usr/local/lib/python3.6/site-packages (from catboost&lt;0.26,&gt;=0.24.0-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (1.16.0)
-Requirement already satisfied: dataclasses in /usr/local/lib/python3.6/site-packages (from d8&lt;1.0,&gt;=0.0.2-&gt;autogluon.vision==0.3.1-&gt;autogluon) (0.8)
-Requirement already satisfied: xxhash in /usr/local/lib/python3.6/site-packages (from d8&lt;1.0,&gt;=0.0.2-&gt;autogluon.vision==0.3.1-&gt;autogluon) (3.0.0)
-Requirement already satisfied: kaggle in /usr/local/lib/python3.6/site-packages (from d8&lt;1.0,&gt;=0.0.2-&gt;autogluon.vision==0.3.1-&gt;autogluon) (1.5.12)
+Collecting xxhash
+  Downloading xxhash-3.0.0-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (211 kB)
+     |████████████████████████████████| 211 kB 55.7 MB/s            
+Collecting dataclasses
+  Downloading dataclasses-0.8-py3-none-any.whl (19 kB)
+Collecting kaggle
+  Downloading kaggle-1.5.12.tar.gz (58 kB)
+     |████████████████████████████████| 58 kB 63.3 MB/s            
+  Preparing metadata (setup.py) ... done
 Requirement already satisfied: pyyaml in /usr/local/lib/python3.6/site-packages (from dask&gt;=2.6.0-&gt;autogluon.core==0.3.1-&gt;autogluon) (5.4.1)
-Requirement already satisfied: click&gt;=6.6 in /usr/local/lib/python3.6/site-packages (from distributed&gt;=2.6.0-&gt;autogluon.core==0.3.1-&gt;autogluon) (8.0.4)
-Requirement already satisfied: setuptools in /usr/local/lib/python3.6/site-packages (from distributed&gt;=2.6.0-&gt;autogluon.core==0.3.1-&gt;autogluon) (59.6.0)
-Requirement already satisfied: tblib&gt;=1.6.0 in /usr/local/lib/python3.6/site-packages (from distributed&gt;=2.6.0-&gt;autogluon.core==0.3.1-&gt;autogluon) (1.7.0)
-Requirement already satisfied: zict&gt;=0.1.3 in /usr/local/lib/python3.6/site-packages (from distributed&gt;=2.6.0-&gt;autogluon.core==0.3.1-&gt;autogluon) (2.1.0)
-Requirement already satisfied: msgpack&gt;=0.6.0 in /usr/local/lib/python3.6/site-packages (from distributed&gt;=2.6.0-&gt;autogluon.core==0.3.1-&gt;autogluon) (1.0.3)
 Requirement already satisfied: cloudpickle&gt;=1.5.0 in /usr/local/lib/python3.6/site-packages (from distributed&gt;=2.6.0-&gt;autogluon.core==0.3.1-&gt;autogluon) (1.6.0)
-Requirement already satisfied: toolz&gt;=0.8.2 in /usr/local/lib/python3.6/site-packages (from distributed&gt;=2.6.0-&gt;autogluon.core==0.3.1-&gt;autogluon) (0.11.2)
-Requirement already satisfied: sortedcontainers!=2.0.0,!=2.0.1 in /usr/local/lib/python3.6/site-packages (from distributed&gt;=2.6.0-&gt;autogluon.core==0.3.1-&gt;autogluon) (2.4.0)
-Requirement already satisfied: packaging in /usr/local/lib/python3.6/site-packages (from fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (20.9)
+Collecting msgpack&gt;=0.6.0
+  Downloading msgpack-1.0.3-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (299 kB)
+     |████████████████████████████████| 299 kB 71.1 MB/s            
+Collecting tblib&gt;=1.6.0
+  Downloading tblib-1.7.0-py2.py3-none-any.whl (12 kB)
+Collecting toolz&gt;=0.8.2
+  Downloading toolz-0.11.2-py3-none-any.whl (55 kB)
+     |████████████████████████████████| 55 kB 47.1 MB/s            
+Collecting zict&gt;=0.1.3
+  Downloading zict-2.1.0-py3-none-any.whl (11 kB)
+Collecting sortedcontainers!=2.0.0,!=2.0.1
+  Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.6/site-packages (from distributed&gt;=2.6.0-&gt;autogluon.core==0.3.1-&gt;autogluon) (59.6.0)
+Collecting click&gt;=6.6
+  Downloading click-8.0.4-py3-none-any.whl (97 kB)
+     |████████████████████████████████| 97 kB 55.2 MB/s            
+Collecting torchvision&gt;=0.8.2
+  Downloading torchvision-0.11.2-cp36-cp36m-manylinux1_x86_64.whl (23.3 MB)
+     |████████████████████████████████| 23.3 MB 51.0 MB/s            
 Requirement already satisfied: pip in /usr/local/lib/python3.6/site-packages (from fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (21.3.1)
-Requirement already satisfied: spacy&lt;4 in /usr/local/lib/python3.6/site-packages (from fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (3.2.3)
-Requirement already satisfied: fastprogress&gt;=0.2.4 in /usr/local/lib/python3.6/site-packages (from fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (1.0.2)
-Requirement already satisfied: fastdownload&lt;2,&gt;=0.0.5 in /usr/local/lib/python3.6/site-packages (from fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (0.0.5)
-Requirement already satisfied: fastcore&lt;1.4,&gt;=1.3.22 in /usr/local/lib/python3.6/site-packages (from fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (1.3.29)
-Requirement already satisfied: torchvision&gt;=0.8.2 in /usr/local/lib/python3.6/site-packages (from fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (0.11.2)
-Requirement already satisfied: opencv-python in /usr/local/lib/python3.6/site-packages (from gluoncv&lt;0.10.5,&gt;=0.10.4-&gt;autogluon.extra==0.3.1-&gt;autogluon) (4.5.5.62)
+Collecting fastprogress&gt;=0.2.4
+  Downloading fastprogress-1.0.2-py3-none-any.whl (12 kB)
+Requirement already satisfied: packaging in /usr/local/lib/python3.6/site-packages (from fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (20.9)
+Collecting fastcore&lt;1.4,&gt;=1.3.22
+  Downloading fastcore-1.3.29-py3-none-any.whl (55 kB)
+     |████████████████████████████████| 55 kB 50.4 MB/s            
+Collecting fastdownload&lt;2,&gt;=0.0.5
+  Downloading fastdownload-0.0.5-py3-none-any.whl (13 kB)
+Collecting spacy&lt;4
+  Downloading spacy-3.2.3-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.0 MB)
+     |████████████████████████████████| 6.0 MB 49.1 MB/s            
+Collecting autocfg
+  Downloading autocfg-0.0.8-py3-none-any.whl (13 kB)
+Collecting opencv-python
+  Downloading opencv_python-4.5.5.62-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (60.4 MB)
+     |████████████████████████████████| 60.4 MB 54.4 MB/s            
 Requirement already satisfied: portalocker in /usr/local/lib/python3.6/site-packages (from gluoncv&lt;0.10.5,&gt;=0.10.4-&gt;autogluon.extra==0.3.1-&gt;autogluon) (2.2.1)
-Requirement already satisfied: autocfg in /usr/local/lib/python3.6/site-packages (from gluoncv&lt;0.10.5,&gt;=0.10.4-&gt;autogluon.extra==0.3.1-&gt;autogluon) (0.0.8)
 Requirement already satisfied: wheel in /usr/local/lib/python3.6/site-packages (from lightgbm&lt;4.0,&gt;=3.0-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (0.37.1)
 Requirement already satisfied: decorator&gt;=4.3.0 in /usr/local/lib/python3.6/site-packages (from networkx&lt;3.0,&gt;=2.3-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (5.1.1)
 Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.6/site-packages (from pandas&lt;2.0,&gt;=1.0.0-&gt;autogluon.core==0.3.1-&gt;autogluon) (2.8.2)
@@ -13292,57 +13412,151 @@ Requirement already satisfied: pytz&gt;=2017.2 in /usr/local/lib/python3.6/site-
 Requirement already satisfied: cryptography&gt;=2.5 in /usr/local/lib/python3.6/site-packages (from paramiko&gt;=2.4-&gt;autogluon.core==0.3.1-&gt;autogluon) (3.4.6)
 Requirement already satisfied: pynacl&gt;=1.0.1 in /usr/local/lib/python3.6/site-packages (from paramiko&gt;=2.4-&gt;autogluon.core==0.3.1-&gt;autogluon) (1.4.0)
 Requirement already satisfied: bcrypt&gt;=3.1.3 in /usr/local/lib/python3.6/site-packages (from paramiko&gt;=2.4-&gt;autogluon.core==0.3.1-&gt;autogluon) (3.2.0)
-Requirement already satisfied: joblib&gt;=0.11 in /usr/local/lib/python3.6/site-packages (from scikit-learn&lt;0.25,&gt;=0.23.2-&gt;autogluon.core==0.3.1-&gt;autogluon) (1.1.0)
-Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /usr/local/lib/python3.6/site-packages (from scikit-learn&lt;0.25,&gt;=0.23.2-&gt;autogluon.core==0.3.1-&gt;autogluon) (3.1.0)
+Collecting joblib&gt;=0.11
+  Downloading joblib-1.1.0-py2.py3-none-any.whl (306 kB)
+     |████████████████████████████████| 306 kB 13.1 MB/s            
+Collecting threadpoolctl&gt;=2.0.0
+  Downloading threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
 Requirement already satisfied: typing-extensions in /usr/local/lib/python3.6/site-packages (from torch&lt;2.0,&gt;=1.0-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (3.7.4.3)
 Requirement already satisfied: s3transfer&lt;0.4.0,&gt;=0.3.0 in /usr/local/lib/python3.6/site-packages (from boto3-&gt;autogluon.core==0.3.1-&gt;autogluon) (0.3.4)
-Requirement already satisfied: jmespath&lt;1.0.0,&gt;=0.7.1 in /usr/local/lib/python3.6/site-packages (from boto3-&gt;autogluon.core==0.3.1-&gt;autogluon) (0.10.0)
 Requirement already satisfied: botocore&lt;1.21.0,&gt;=1.20.20 in /usr/local/lib/python3.6/site-packages (from boto3-&gt;autogluon.core==0.3.1-&gt;autogluon) (1.20.20)
+Requirement already satisfied: jmespath&lt;1.0.0,&gt;=0.7.1 in /usr/local/lib/python3.6/site-packages (from boto3-&gt;autogluon.core==0.3.1-&gt;autogluon) (0.10.0)
 Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.6/site-packages (from matplotlib-&gt;autogluon.core==0.3.1-&gt;autogluon) (1.3.1)
 Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.6/site-packages (from matplotlib-&gt;autogluon.core==0.3.1-&gt;autogluon) (0.10.0)
-Requirement already satisfied: liac-arff&gt;=2.4.0 in /usr/local/lib/python3.6/site-packages (from openml-&gt;autogluon.extra==0.3.1-&gt;autogluon) (2.5.0)
-Requirement already satisfied: minio in /usr/local/lib/python3.6/site-packages (from openml-&gt;autogluon.extra==0.3.1-&gt;autogluon) (7.1.4)
-Requirement already satisfied: xmltodict in /usr/local/lib/python3.6/site-packages (from openml-&gt;autogluon.extra==0.3.1-&gt;autogluon) (0.12.0)
-Requirement already satisfied: tomli&gt;=1.0.0 in /usr/local/lib/python3.6/site-packages (from pytest-&gt;autogluon.extra==0.3.1-&gt;autogluon) (1.2.3)
+Collecting liac-arff&gt;=2.4.0
+  Downloading liac-arff-2.5.0.tar.gz (13 kB)
+  Preparing metadata (setup.py) ... done
+Collecting xmltodict
+  Downloading xmltodict-0.12.0-py2.py3-none-any.whl (9.2 kB)
+Collecting minio
+  Downloading minio-7.1.4-py3-none-any.whl (75 kB)
+     |████████████████████████████████| 75 kB 52.5 MB/s            
+Collecting iniconfig
+  Downloading iniconfig-1.1.1-py2.py3-none-any.whl (5.0 kB)
+Collecting tomli&gt;=1.0.0
+  Downloading tomli-1.2.3-py3-none-any.whl (12 kB)
 Requirement already satisfied: attrs&gt;=19.2.0 in /usr/local/lib/python3.6/site-packages (from pytest-&gt;autogluon.extra==0.3.1-&gt;autogluon) (20.3.0)
-Requirement already satisfied: pluggy&lt;2.0,&gt;=0.12 in /usr/local/lib/python3.6/site-packages (from pytest-&gt;autogluon.extra==0.3.1-&gt;autogluon) (1.0.0)
-Requirement already satisfied: py&gt;=1.8.2 in /usr/local/lib/python3.6/site-packages (from pytest-&gt;autogluon.extra==0.3.1-&gt;autogluon) (1.11.0)
-Requirement already satisfied: iniconfig in /usr/local/lib/python3.6/site-packages (from pytest-&gt;autogluon.extra==0.3.1-&gt;autogluon) (1.1.1)
+Collecting pluggy&lt;2.0,&gt;=0.12
+  Downloading pluggy-1.0.0-py2.py3-none-any.whl (13 kB)
 Requirement already satisfied: importlib-metadata&gt;=0.12 in /usr/local/lib/python3.6/site-packages (from pytest-&gt;autogluon.extra==0.3.1-&gt;autogluon) (3.7.0)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.6/site-packages (from requests-&gt;autogluon.core==0.3.1-&gt;autogluon) (2020.12.5)
+Collecting py&gt;=1.8.2
+  Downloading py-1.11.0-py2.py3-none-any.whl (98 kB)
+     |████████████████████████████████| 98 kB 46.3 MB/s            
 Requirement already satisfied: chardet&lt;3.1.0,&gt;=3.0.2 in /usr/local/lib/python3.6/site-packages (from requests-&gt;autogluon.core==0.3.1-&gt;autogluon) (3.0.4)
-Requirement already satisfied: idna&lt;2.9,&gt;=2.5 in /usr/local/lib/python3.6/site-packages (from requests-&gt;autogluon.core==0.3.1-&gt;autogluon) (2.8)
 Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /usr/local/lib/python3.6/site-packages (from requests-&gt;autogluon.core==0.3.1-&gt;autogluon) (1.25.11)
+Requirement already satisfied: idna&lt;2.9,&gt;=2.5 in /usr/local/lib/python3.6/site-packages (from requests-&gt;autogluon.core==0.3.1-&gt;autogluon) (2.8)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.6/site-packages (from requests-&gt;autogluon.core==0.3.1-&gt;autogluon) (2020.12.5)
 Requirement already satisfied: cffi&gt;=1.1 in /usr/local/lib/python3.6/site-packages (from bcrypt&gt;=3.1.3-&gt;paramiko&gt;=2.4-&gt;autogluon.core==0.3.1-&gt;autogluon) (1.14.5)
 Requirement already satisfied: zipp&gt;=0.5 in /usr/local/lib/python3.6/site-packages (from importlib-metadata&gt;=0.12-&gt;pytest-&gt;autogluon.extra==0.3.1-&gt;autogluon) (3.4.0)
+Collecting spacy-loggers&lt;2.0.0,&gt;=1.0.0
+  Downloading spacy_loggers-1.0.1-py3-none-any.whl (7.0 kB)
+Collecting cymem&lt;2.1.0,&gt;=2.0.2
+  Downloading cymem-2.0.6-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (35 kB)
+Collecting typer&lt;0.5.0,&gt;=0.3.0
+  Downloading typer-0.4.0-py3-none-any.whl (27 kB)
+Collecting preshed&lt;3.1.0,&gt;=3.0.2
+  Downloading preshed-3.0.6-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (127 kB)
+     |████████████████████████████████| 127 kB 54.9 MB/s            
+Collecting thinc&lt;8.1.0,&gt;=8.0.12
+  Downloading thinc-8.0.13-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (629 kB)
+     |████████████████████████████████| 629 kB 61.4 MB/s            
+Collecting blis&lt;0.8.0,&gt;=0.4.0
+  Downloading blis-0.7.6-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (9.9 MB)
+     |████████████████████████████████| 9.9 MB 57.3 MB/s            
+Collecting wasabi&lt;1.1.0,&gt;=0.8.1
+  Downloading wasabi-0.9.0-py3-none-any.whl (25 kB)
+Collecting murmurhash&lt;1.1.0,&gt;=0.28.0
+  Downloading murmurhash-1.0.6-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (21 kB)
+Collecting pathy&gt;=0.3.5
+  Downloading pathy-0.6.1-py3-none-any.whl (42 kB)
+     |████████████████████████████████| 42 kB 36.9 MB/s            
+Collecting catalogue&lt;2.1.0,&gt;=2.0.6
+  Downloading catalogue-2.0.6-py3-none-any.whl (17 kB)
+Collecting spacy-legacy&lt;3.1.0,&gt;=3.0.8
+  Downloading spacy_legacy-3.0.9-py2.py3-none-any.whl (20 kB)
+Collecting srsly&lt;3.0.0,&gt;=2.4.1
+  Downloading srsly-2.4.2-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (451 kB)
+     |████████████████████████████████| 451 kB 54.3 MB/s            
+Collecting pydantic!=1.8,!=1.8.1,&lt;1.9.0,&gt;=1.7.4
+  Downloading pydantic-1.8.2-cp36-cp36m-manylinux2014_x86_64.whl (10.2 MB)
+     |████████████████████████████████| 10.2 MB 50.3 MB/s            
 Requirement already satisfied: jinja2 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (3.0.3)
-Requirement already satisfied: srsly&lt;3.0.0,&gt;=2.4.1 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (2.4.2)
-Requirement already satisfied: pydantic!=1.8,!=1.8.1,&lt;1.9.0,&gt;=1.7.4 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (1.8.2)
-Requirement already satisfied: typer&lt;0.5.0,&gt;=0.3.0 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (0.4.0)
-Requirement already satisfied: blis&lt;0.8.0,&gt;=0.4.0 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (0.7.6)
-Requirement already satisfied: thinc&lt;8.1.0,&gt;=8.0.12 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (8.0.13)
-Requirement already satisfied: pathy&gt;=0.3.5 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (0.6.1)
-Requirement already satisfied: langcodes&lt;4.0.0,&gt;=3.2.0 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (3.3.0)
-Requirement already satisfied: spacy-legacy&lt;3.1.0,&gt;=3.0.8 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (3.0.9)
-Requirement already satisfied: preshed&lt;3.1.0,&gt;=3.0.2 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (3.0.6)
-Requirement already satisfied: catalogue&lt;2.1.0,&gt;=2.0.6 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (2.0.6)
-Requirement already satisfied: cymem&lt;2.1.0,&gt;=2.0.2 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (2.0.6)
-Requirement already satisfied: wasabi&lt;1.1.0,&gt;=0.8.1 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (0.9.0)
-Requirement already satisfied: murmurhash&lt;1.1.0,&gt;=0.28.0 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (1.0.6)
-Requirement already satisfied: spacy-loggers&lt;2.0.0,&gt;=1.0.0 in /usr/local/lib/python3.6/site-packages (from spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (1.0.1)
-Requirement already satisfied: heapdict in /usr/local/lib/python3.6/site-packages (from zict&gt;=0.1.3-&gt;distributed&gt;=2.6.0-&gt;autogluon.core==0.3.1-&gt;autogluon) (1.0.1)
-Requirement already satisfied: immutables&gt;=0.9 in /usr/local/lib/python3.6/site-packages (from contextvars-&gt;autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (0.16)
-Requirement already satisfied: pyflakes&lt;2.5.0,&gt;=2.4.0 in /usr/local/lib/python3.6/site-packages (from flake8-&gt;autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (2.4.0)
-Requirement already satisfied: pycodestyle&lt;2.9.0,&gt;=2.8.0 in /usr/local/lib/python3.6/site-packages (from flake8-&gt;autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (2.8.0)
-Requirement already satisfied: mccabe&lt;0.7.0,&gt;=0.6.0 in /usr/local/lib/python3.6/site-packages (from flake8-&gt;autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (0.6.1)
-Requirement already satisfied: python-slugify in /usr/local/lib/python3.6/site-packages (from kaggle-&gt;d8&lt;1.0,&gt;=0.0.2-&gt;autogluon.vision==0.3.1-&gt;autogluon) (6.1.1)
-Requirement already satisfied: tenacity&gt;=6.2.0 in /usr/local/lib/python3.6/site-packages (from plotly-&gt;catboost&lt;0.26,&gt;=0.24.0-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (8.0.1)
-Requirement already satisfied: tabulate&gt;=0.8.9 in /usr/local/lib/python3.6/site-packages (from sacrebleu-&gt;autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (0.8.9)
+Collecting langcodes&lt;4.0.0,&gt;=3.2.0
+  Downloading langcodes-3.3.0-py3-none-any.whl (181 kB)
+     |████████████████████████████████| 181 kB 81.4 MB/s            
+Collecting torch&lt;2.0,&gt;=1.0
+  Downloading torch-1.10.1-cp36-cp36m-manylinux1_x86_64.whl (881.9 MB)
+     |████████████████████████████████| 881.9 MB 6.3 MB/s                     | 175.5 MB 63.9 MB/s eta 0:00:12��█              | 496.8 MB 86.8 MB/s eta 0:00:05 �██████████▌       | 673.8 MB 6.0 MB/s eta 0:00:35  3 MB/s eta 0:00:07  
+Collecting heapdict
+  Downloading HeapDict-1.0.1-py3-none-any.whl (3.9 kB)
+Collecting immutables&gt;=0.9
+  Downloading immutables-0.16-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (103 kB)
+     |████████████████████████████████| 103 kB 62.8 MB/s            
+Collecting pyflakes&lt;2.5.0,&gt;=2.4.0
+  Downloading pyflakes-2.4.0-py2.py3-none-any.whl (69 kB)
+     |████████████████████████████████| 69 kB 50.6 MB/s            
+Collecting mccabe&lt;0.7.0,&gt;=0.6.0
+  Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting pycodestyle&lt;2.9.0,&gt;=2.8.0
+  Downloading pycodestyle-2.8.0-py2.py3-none-any.whl (42 kB)
+     |████████████████████████████████| 42 kB 23.4 MB/s            
+Collecting python-slugify
+  Downloading python_slugify-6.1.1-py2.py3-none-any.whl (9.1 kB)
+Collecting tenacity&gt;=6.2.0
+  Downloading tenacity-8.0.1-py3-none-any.whl (24 kB)
 Requirement already satisfied: colorama in /usr/local/lib/python3.6/site-packages (from sacrebleu-&gt;autogluon-contrib-nlp==0.0.1b20210201-&gt;autogluon.text==0.3.1-&gt;autogluon) (0.4.3)
+Collecting tabulate&gt;=0.8.9
+  Downloading tabulate-0.8.9-py3-none-any.whl (25 kB)
 Requirement already satisfied: pycparser in /usr/local/lib/python3.6/site-packages (from cffi&gt;=1.1-&gt;bcrypt&gt;=3.1.3-&gt;paramiko&gt;=2.4-&gt;autogluon.core==0.3.1-&gt;autogluon) (2.20)
-Requirement already satisfied: smart-open&lt;6.0.0,&gt;=5.0.0 in /usr/local/lib/python3.6/site-packages (from pathy&gt;=0.3.5-&gt;spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (5.2.1)
+Collecting smart-open&lt;6.0.0,&gt;=5.0.0
+  Downloading smart_open-5.2.1-py3-none-any.whl (58 kB)
+     |████████████████████████████████| 58 kB 47.9 MB/s            
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.6/site-packages (from jinja2-&gt;spacy&lt;4-&gt;fastai&lt;3.0,&gt;=2.3.1-&gt;autogluon.tabular[all]==0.3.1-&gt;autogluon) (2.0.1)
-Requirement already satisfied: text-unidecode&gt;=1.3 in /usr/local/lib/python3.6/site-packages (from python-slugify-&gt;kaggle-&gt;d8&lt;1.0,&gt;=0.0.2-&gt;autogluon.vision==0.3.1-&gt;autogluon) (1.3)
+Collecting text-unidecode&gt;=1.3
+  Downloading text_unidecode-1.3-py2.py3-none-any.whl (78 kB)
+     |████████████████████████████████| 78 kB 50.4 MB/s            
+Building wheels for collected packages: autograd, openml, future, liac-arff, contextvars, kaggle
+  Building wheel for autograd (setup.py) ... done
+  Created wheel for autograd: filename=autograd-1.3-py3-none-any.whl size=47988 sha256=7e8a44fd29d236da4fb211c044e767f9f8d6232f7fa2c75051685ddaa293269a
+  Stored in directory: /tmp/pip-ephem-wheel-cache-89v_9jky/wheels/b2/a5/3c/929b91003a3b75a175ccba7cef35200a1890cdb46903f18072
+  Building wheel for openml (setup.py) ... done
+  Created wheel for openml: filename=openml-0.12.2-py3-none-any.whl size=137326 sha256=a3441b66e0864f5a04cb25af42a53f24a49a44a34a9a0edf48ed3084e21a4bea
+  Stored in directory: /tmp/pip-ephem-wheel-cache-89v_9jky/wheels/98/26/5e/da1e991a1a0ec37114d8f3e80952168a9c9ce19b8a123dc0e6
+  Building wheel for future (setup.py) ... done
+  Created wheel for future: filename=future-0.18.2-py3-none-any.whl size=491070 sha256=9f04ae96b210153158db743d1c1d063647aee65c648b7b70272c1c0d46b87849
+  Stored in directory: /tmp/pip-ephem-wheel-cache-89v_9jky/wheels/6e/9c/ed/4499c9865ac1002697793e0ae05ba6be33553d098f3347fb94
+  Building wheel for liac-arff (setup.py) ... done
+  Created wheel for liac-arff: filename=liac_arff-2.5.0-py3-none-any.whl size=11732 sha256=96c080609351314ac24c7546304d9278fc51e0f34182b9696a9cb2c1f9448f2e
+  Stored in directory: /tmp/pip-ephem-wheel-cache-89v_9jky/wheels/53/ba/da/8562a6a6dbb428fd1ecc21053106df3948645cd991958f669b
+  Building wheel for contextvars (setup.py) ... done
+  Created wheel for contextvars: filename=contextvars-2.4-py3-none-any.whl size=7681 sha256=9667a84ea1e039cc68217c1edb84378b48be289ed60635b7e500a541b09aa9aa
+  Stored in directory: /tmp/pip-ephem-wheel-cache-89v_9jky/wheels/41/11/53/911724983aa48deb94792432e14e518447212dd6c5477d49d3
+  Building wheel for kaggle (setup.py) ... done
+  Created wheel for kaggle: filename=kaggle-1.5.12-py3-none-any.whl size=73051 sha256=d6f33ec1c6fcf4ee54917ddee4327ab6304927193b06b48fe2a9e2283864d2ea
+  Stored in directory: /tmp/pip-ephem-wheel-cache-89v_9jky/wheels/77/47/e4/44a4ba1b7dfd53faaa35f59f1175e123b213ff401a8a56876b
+Successfully built autograd openml future liac-arff contextvars kaggle
+Installing collected packages: immutables, heapdict, zict, toolz, threadpoolctl, tblib, sortedcontainers, scipy, Pillow, murmurhash, msgpack, joblib, future, dataclasses, dask, cymem, contextvars, click, catalogue, wasabi, typer, tomli, text-unidecode, srsly, smart-open, scikit-learn, pydantic, py, preshed, pluggy, pandas, iniconfig, distributed, dill, ConfigSpace, blis, autograd, xmltodict, torch, thinc, tenacity, tabulate, spacy-loggers, spacy-legacy, regex, python-slugify, pytest, pyflakes, pycodestyle, pyarrow, pathy, minio, mccabe, liac-arff, langcodes, fastprogress, fastcore, autogluon.core, yacs, xxhash, torchvision, tokenizers, spacy, sentencepiece, sacremoses, sacrebleu, plotly, openml, opencv-python, kaggle, flake8, fastdownload, autogluon.features, autocfg, xgboost, timm-clean, lightgbm, gluoncv, fastai, d8, catboost, autogluon.tabular, autogluon.mxnet, autogluon-contrib-nlp, autogluon.vision, autogluon.text, autogluon.extra, autogluon
+  Attempting uninstall: scipy
+    Found existing installation: scipy 1.2.2
+    Uninstalling scipy-1.2.2:
+      Successfully uninstalled scipy-1.2.2
+  Attempting uninstall: Pillow
+    Found existing installation: Pillow 8.1.1
+    Uninstalling Pillow-8.1.1:
+      Successfully uninstalled Pillow-8.1.1
+  Attempting uninstall: scikit-learn
+    Found existing installation: scikit-learn 0.20.4
+    Uninstalling scikit-learn-0.20.4:
+      Successfully uninstalled scikit-learn-0.20.4
+  Attempting uninstall: pandas
+    Found existing installation: pandas 0.25.1
+    Uninstalling pandas-0.25.1:
+      Successfully uninstalled pandas-0.25.1
+  Attempting uninstall: gluoncv
+    Found existing installation: gluoncv 0.6.0
+    Uninstalling gluoncv-0.6.0:
+      Successfully uninstalled gluoncv-0.6.0
+Successfully installed ConfigSpace-0.4.19 Pillow-8.3.2 autocfg-0.0.8 autogluon-0.3.1 autogluon-contrib-nlp-0.0.1b20210201 autogluon.core-0.3.1 autogluon.extra-0.3.1 autogluon.features-0.3.1 autogluon.mxnet-0.3.1 autogluon.tabular-0.3.1 autogluon.text-0.3.1 autogluon.vision-0.3.1 autograd-1.3 blis-0.7.6 catalogue-2.0.6 catboost-0.25.1 click-8.0.4 contextvars-2.4 cymem-2.0.6 d8-0.0.2.post0 dask-2021.3.0 dataclasses-0.8 dill-0.3.4 distributed-2021.3.0 fastai-2.5.3 fastcore-1.3.29 fastdownload-0.0.5 fastprogress-1.0.2 flake8-4.0.1 future-0.18.2 gluoncv-0.10.4.post4 heapdict-1.0.1 immutables-0.16 iniconfig-1.1.1 joblib-1.1.0 kaggle-1.5.12 langcodes-3.3.0 liac-arff-2.5.0 lightgbm-3.3.2 mccabe-0.6.1 minio-7.1.4 msgpack-1.0.3 murmurhash-1.0.6 opencv-python-4.5.5.62 openml-0.12.2 pandas-1.1.5 pathy-0.6.1 plotly-5.6.0 pluggy-1.0.0 preshed-3.0.6 py-1.11.0 pyarrow-6.0.1 pycodestyle-2.8.0 pydantic-1.8.2 pyflakes-2.4.0 pytest-7.0.1 python-slugify-6.1.1 regex-2022.3.2 sacrebleu-2.0.0 sacremoses-0.0.47 scikit-learn-0.24.2 scipy-1.5.4 sentencepiece-0.1.95 smart-open-5.2.1 sortedcontainers-2.4.0 spacy-3.2.3 spacy-legacy-3.0.9 spacy-loggers-1.0.1 srsly-2.4.2 tabulate-0.8.9 tblib-1.7.0 tenacity-8.0.1 text-unidecode-1.3 thinc-8.0.13 threadpoolctl-3.1.0 timm-clean-0.4.12 tokenizers-0.9.4 tomli-1.2.3 toolz-0.11.2 torch-1.10.1 torchvision-0.11.2 typer-0.4.0 wasabi-0.9.0 xgboost-1.4.2 xmltodict-0.12.0 xxhash-3.0.0 yacs-0.1.8 zict-2.1.0
 <span class="ansi-yellow-fg">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
 </pre>
 </div>
@@ -13447,7 +13661,7 @@ Requirement already satisfied: text-unidecode&gt;=1.3 in /usr/local/lib/python3.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13461,7 +13675,7 @@ Requirement already satisfied: text-unidecode&gt;=1.3 in /usr/local/lib/python3.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create the train dataset in pandas by reading the csv</span>
@@ -13481,7 +13695,7 @@ Requirement already satisfied: text-unidecode&gt;=1.3 in /usr/local/lib/python3.
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13835,7 +14049,7 @@ memory usage: 1020.7 KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create the test pandas dataframe in pandas by reading the csv, remember to parse the datetime!</span>
@@ -13854,7 +14068,7 @@ memory usage: 1020.7 KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -14113,7 +14327,7 @@ memory usage: 1020.7 KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Same thing as train and test dataset</span>
@@ -14132,7 +14346,7 @@ memory usage: 1020.7 KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[29]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -15441,7 +15655,7 @@ tail: write error: Broken pipe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create a new feature</span>
@@ -15473,7 +15687,7 @@ tail: write error: Broken pipe
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -15610,7 +15824,7 @@ tail: write error: Broken pipe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s2">&quot;season&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s2">&quot;season&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
@@ -17174,7 +17388,7 @@ tail: write error: Broken pipe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">autogluon.core</span> <span class="k">as</span> <span class="nn">ag</span> 
@@ -17207,13 +17421,14 @@ tail: write error: Broken pipe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">predictor_new_hpo</span> <span class="o">=</span> <span class="n">TabularPredictor</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span><span class="n">eval_metric</span> <span class="o">=</span> <span class="s2">&quot;r2&quot;</span><span class="p">,</span><span class="n">learner_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ignored_columns&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;casual&#39;</span><span class="p">,</span><span class="s1">&#39;registered&#39;</span><span class="p">]})</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
 <span class="n">train_data</span><span class="o">=</span><span class="n">train</span><span class="p">,</span><span class="n">time_limit</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span><span class="n">presets</span><span class="o">=</span><span class="s2">&quot;best_quality&quot;</span><span class="p">,</span>
+<span class="n">num_bag_folds</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+<span class="n">num_stack_levels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
 <span class="n">hyperparameters</span><span class="o">=</span><span class="n">hyperparameters</span><span class="p">,</span>
-<span class="n">hyperparameter_tune_kwargs</span><span class="o">=</span><span class="n">hyperparameter_tune_kwargs</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -17231,10 +17446,10 @@ tail: write error: Broken pipe
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>No path specified. Models will be saved in: &#34;AutogluonModels/ag-20220308_024457/&#34;
+<pre>No path specified. Models will be saved in: &#34;AutogluonModels/ag-20220308_233632/&#34;
 Presets specified: [&#39;best_quality&#39;]
 Beginning AutoGluon training ... Time limit = 600s
-AutoGluon will save models to &#34;AutogluonModels/ag-20220308_024457/&#34;
+AutoGluon will save models to &#34;AutogluonModels/ag-20220308_233632/&#34;
 AutoGluon Version:  0.3.1
 Train Data Rows:    10886
 Train Data Columns: 13
@@ -17245,7 +17460,7 @@ AutoGluon infers your prediction problem is: &#39;regression&#39; (because dtype
 Using Feature Generators to preprocess the data ...
 Dropping user-specified ignored columns: [&#39;casual&#39;, &#39;registered&#39;]
 Fitting AutoMLPipelineFeatureGenerator...
-	Available Memory:                    3140.7 MB
+	Available Memory:                    3173.07 MB
 	Train Data (Original)  Memory Usage: 0.65 MB (0.0% of available memory)
 	Inferring data type of each feature based on column values. Set feature_metadata_in to manually specify special dtypes of the features.
 	Stage 1 Generators:
@@ -17271,12 +17486,12 @@ Fitting AutoMLPipelineFeatureGenerator...
 	0.2s = Fit runtime
 	11 features in original data used to generate 11 features in processed data.
 	Train Data (Processed) Memory Usage: 0.65 MB (0.0% of available memory)
-Data preprocessing and feature engineering runtime = 0.21s ...
+Data preprocessing and feature engineering runtime = 0.22s ...
 AutoGluon will gauge predictive performance using evaluation metric: &#39;r2&#39;
 	To change this, specify the eval_metric argument of fit()
 AutoGluon will fit 2 stack levels (L1 to L2) ...
 Fitting 2 L1 models ...
-Fitting model: LightGBM_BAG_L1 ... Training model for up to 399.76s of the 599.79s of remaining time.
+Fitting model: LightGBM_BAG_L1 ... Training model for up to 399.75s of the 599.78s of remaining time.
 Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
 /usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
   _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
@@ -17292,6 +17507,30 @@ Attempting to fit model without HPO, but search space is provided. fit() will on
 Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
 /usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
   _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
+	0.8609	 = Validation score   (r2)
+	2.46s	 = Training   runtime
+	0.11s	 = Validation runtime
+Fitting model: NeuralNetMXNet_BAG_L1 ... Training model for up to 396.74s of the 596.76s of remaining time.
+Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
+	Ran out of time, stopping training early. (Stopping on epoch 65)
+Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
+	Ran out of time, stopping training early. (Stopping on epoch 68)
+Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
+	Ran out of time, stopping training early. (Stopping on epoch 87)
+Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
+	Ran out of time, stopping training early. (Stopping on epoch 81)
+Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
+	Ran out of time, stopping training early. (Stopping on epoch 97)
+	0.8439	 = Validation score   (r2)
+	371.62s	 = Training   runtime
+	1.08s	 = Validation runtime
+Completed 1/20 k-fold bagging repeats ...
+Fitting model: WeightedEnsemble_L2 ... Training model for up to 360.0s of the 223.61s of remaining time.
+	0.8716	 = Validation score   (r2)
+	0.15s	 = Training   runtime
+	0.0s	 = Validation runtime
+Fitting 2 L2 models ...
+Fitting model: LightGBM_BAG_L2 ... Training model for up to 223.37s of the 223.36s of remaining time.
 Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
 /usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
   _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
@@ -17307,22 +17546,12 @@ Attempting to fit model without HPO, but search space is provided. fit() will on
 Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
 /usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
   _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
-	0.8636	 = Validation score   (r2)
-	5.75s	 = Training   runtime
-	0.12s	 = Validation runtime
-Fitting model: NeuralNetMXNet_BAG_L1 ... Training model for up to 393.28s of the 593.31s of remaining time.
+	0.8734	 = Validation score   (r2)
+	2.5s	 = Training   runtime
+	0.09s	 = Validation runtime
+Fitting model: NeuralNetMXNet_BAG_L2 ... Training model for up to 220.39s of the 220.37s of remaining time.
 Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 30)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 30)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 31)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 32)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 33)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 41)
+	Ran out of time, stopping training early. (Stopping on epoch 35)
 Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
 	Ran out of time, stopping training early. (Stopping on epoch 37)
 Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
@@ -17330,81 +17559,17 @@ Attempting to fit model without HPO, but search space is provided. fit() will on
 Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
 	Ran out of time, stopping training early. (Stopping on epoch 43)
 Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 53)
-	0.8082	 = Validation score   (r2)
-	377.04s	 = Training   runtime
-	1.7s	 = Validation runtime
+	Ran out of time, stopping training early. (Stopping on epoch 63)
+	0.8458	 = Validation score   (r2)
+	206.01s	 = Training   runtime
+	1.17s	 = Validation runtime
 Completed 1/20 k-fold bagging repeats ...
-Fitting model: WeightedEnsemble_L2 ... Training model for up to 360.0s of the 213.98s of remaining time.
-	0.8662	 = Validation score   (r2)
+Fitting model: WeightedEnsemble_L3 ... Training model for up to 360.0s of the 12.78s of remaining time.
+	0.8752	 = Validation score   (r2)
 	0.15s	 = Training   runtime
 	0.0s	 = Validation runtime
-Fitting 2 L2 models ...
-Fitting model: LightGBM_BAG_L2 ... Training model for up to 213.75s of the 213.73s of remaining time.
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-/usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
-  _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-/usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
-  _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-/usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
-  _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-/usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
-  _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-/usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
-  _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-/usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
-  _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-/usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
-  _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-/usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
-  _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-/usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
-  _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-/usr/local/lib/python3.6/site-packages/lightgbm/engine.py:239: UserWarning: &#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. Pass &#39;log_evaluation()&#39; callback via &#39;callbacks&#39; argument instead.
-  _log_warning(&#34;&#39;verbose_eval&#39; argument is deprecated and will be removed in a future release of LightGBM. &#34;
-	0.8705	 = Validation score   (r2)
-	5.28s	 = Training   runtime
-	0.11s	 = Validation runtime
-Fitting model: NeuralNetMXNet_BAG_L2 ... Training model for up to 207.8s of the 207.79s of remaining time.
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 15)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 15)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 16)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 16)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 17)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 17)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 18)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 20)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 26)
-Attempting to fit model without HPO, but search space is provided. fit() will only consider default hyperparameter values from search space.
-	Ran out of time, stopping training early. (Stopping on epoch 27)
-	0.8082	 = Validation score   (r2)
-	197.8s	 = Training   runtime
-	1.74s	 = Validation runtime
-Completed 1/20 k-fold bagging repeats ...
-Fitting model: WeightedEnsemble_L3 ... Training model for up to 360.0s of the 7.62s of remaining time.
-	0.8712	 = Validation score   (r2)
-	0.15s	 = Training   runtime
-	0.0s	 = Validation runtime
-AutoGluon training complete, total runtime = 592.76s ...
-TabularPredictor saved. To load, use: predictor = TabularPredictor.load(&#34;AutogluonModels/ag-20220308_024457/&#34;)
+AutoGluon training complete, total runtime = 587.62s ...
+TabularPredictor saved. To load, use: predictor = TabularPredictor.load(&#34;AutogluonModels/ag-20220308_233632/&#34;)
 </pre>
 </div>
 </div>
@@ -17415,7 +17580,7 @@ TabularPredictor saved. To load, use: predictor = TabularPredictor.load(&#34;Aut
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">predictor_new_hpo</span><span class="o">.</span><span class="n">fit_summary</span><span class="p">()</span>
@@ -17438,24 +17603,24 @@ TabularPredictor saved. To load, use: predictor = TabularPredictor.load(&#34;Aut
 <pre>*** Summary of fit() ***
 Estimated performance of each model:
                    model  score_val  pred_time_val    fit_time  pred_time_val_marginal  fit_time_marginal  stack_level  can_infer  fit_order
-0    WeightedEnsemble_L3   0.444499       2.756220  567.603765                0.000681           0.154780            3       True          6
-1    WeightedEnsemble_L2   0.442690       1.366007  357.281028                0.000648           0.152158            2       True          3
-2        LightGBM_BAG_L2   0.442443       1.439903  361.815276                0.074544           4.686406            2       True          4
-3        LightGBM_BAG_L1   0.438241       0.088915    4.594876                0.088915           4.594876            1       True          1
-4  NeuralNetMXNet_BAG_L2   0.412175       2.680995  562.762580                1.315636         205.633710            2       True          5
-5  NeuralNetMXNet_BAG_L1   0.390434       1.276444  352.533993                1.276444         352.533993            1       True          2
+0    WeightedEnsemble_L3   0.875204       2.458880  582.729354                0.000773           0.148366            3       True          6
+1        LightGBM_BAG_L2   0.873423       1.283340  376.567233                0.093824           2.495305            2       True          4
+2    WeightedEnsemble_L2   0.871557       1.190231  374.218024                0.000715           0.146096            2       True          3
+3        LightGBM_BAG_L1   0.860857       0.107082    2.455194                0.107082           2.455194            1       True          1
+4  NeuralNetMXNet_BAG_L2   0.845776       2.364283  580.085683                1.174767         206.013755            2       True          5
+5  NeuralNetMXNet_BAG_L1   0.843948       1.082434  371.616734                1.082434         371.616734            1       True          2
 Number of models trained: 6
 Types of models trained:
-{&#39;StackerEnsembleModel_LGB&#39;, &#39;WeightedEnsembleModel&#39;, &#39;StackerEnsembleModel_TabularNeuralNet&#39;}
-Bagging used: True  (with 10 folds)
+{&#39;StackerEnsembleModel_LGB&#39;, &#39;StackerEnsembleModel_TabularNeuralNet&#39;, &#39;WeightedEnsembleModel&#39;}
+Bagging used: True  (with 5 folds)
 Multi-layer stack-ensembling used: True  (with 3 levels)
 Feature Metadata (Processed):
 (raw dtype, special dtypes):
-(&#39;float&#39;, [])                : 3 | [&#39;temp&#39;, &#39;atemp&#39;, &#39;windspeed&#39;]
-(&#39;int&#39;, [])                  : 3 | [&#39;season&#39;, &#39;weather&#39;, &#39;humidity&#39;]
-(&#39;int&#39;, [&#39;bool&#39;])            : 2 | [&#39;holiday&#39;, &#39;workingday&#39;]
-(&#39;int&#39;, [&#39;datetime_as_int&#39;]) : 1 | [&#39;datetime&#39;]
-Plot summary of models saved to file: AutogluonModels/ag-20220308_022732/SummaryOfModels.html
+(&#39;category&#39;, [])  : 2 | [&#39;season&#39;, &#39;weather&#39;]
+(&#39;float&#39;, [])     : 3 | [&#39;temp&#39;, &#39;atemp&#39;, &#39;windspeed&#39;]
+(&#39;int&#39;, [])       : 4 | [&#39;humidity&#39;, &#39;hour&#39;, &#39;day&#39;, &#39;month&#39;]
+(&#39;int&#39;, [&#39;bool&#39;]) : 2 | [&#39;holiday&#39;, &#39;workingday&#39;]
+Plot summary of models saved to file: AutogluonModels/ag-20220308_233632/SummaryOfModels.html
 *** End of fit() summary ***
 </pre>
 </div>
@@ -17463,7 +17628,7 @@ Plot summary of models saved to file: AutogluonModels/ag-20220308_022732/Summary
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -17475,32 +17640,32 @@ Plot summary of models saved to file: AutogluonModels/ag-20220308_022732/Summary
   &#39;LightGBM_BAG_L2&#39;: &#39;StackerEnsembleModel_LGB&#39;,
   &#39;NeuralNetMXNet_BAG_L2&#39;: &#39;StackerEnsembleModel_TabularNeuralNet&#39;,
   &#39;WeightedEnsemble_L3&#39;: &#39;WeightedEnsembleModel&#39;},
- &#39;model_performance&#39;: {&#39;LightGBM_BAG_L1&#39;: 0.43824083568176686,
-  &#39;NeuralNetMXNet_BAG_L1&#39;: 0.3904338649903495,
-  &#39;WeightedEnsemble_L2&#39;: 0.4426895811185224,
-  &#39;LightGBM_BAG_L2&#39;: 0.4424431888235898,
-  &#39;NeuralNetMXNet_BAG_L2&#39;: 0.41217543914043187,
-  &#39;WeightedEnsemble_L3&#39;: 0.4444985986448927},
+ &#39;model_performance&#39;: {&#39;LightGBM_BAG_L1&#39;: 0.8608573966048143,
+  &#39;NeuralNetMXNet_BAG_L1&#39;: 0.8439479511516608,
+  &#39;WeightedEnsemble_L2&#39;: 0.871557089208606,
+  &#39;LightGBM_BAG_L2&#39;: 0.8734234366794599,
+  &#39;NeuralNetMXNet_BAG_L2&#39;: 0.8457763942920694,
+  &#39;WeightedEnsemble_L3&#39;: 0.8752042865821965},
  &#39;model_best&#39;: &#39;WeightedEnsemble_L3&#39;,
- &#39;model_paths&#39;: {&#39;LightGBM_BAG_L1&#39;: &#39;AutogluonModels/ag-20220308_022732/models/LightGBM_BAG_L1/&#39;,
-  &#39;NeuralNetMXNet_BAG_L1&#39;: &#39;AutogluonModels/ag-20220308_022732/models/NeuralNetMXNet_BAG_L1/&#39;,
-  &#39;WeightedEnsemble_L2&#39;: &#39;AutogluonModels/ag-20220308_022732/models/WeightedEnsemble_L2/&#39;,
-  &#39;LightGBM_BAG_L2&#39;: &#39;AutogluonModels/ag-20220308_022732/models/LightGBM_BAG_L2/&#39;,
-  &#39;NeuralNetMXNet_BAG_L2&#39;: &#39;AutogluonModels/ag-20220308_022732/models/NeuralNetMXNet_BAG_L2/&#39;,
-  &#39;WeightedEnsemble_L3&#39;: &#39;AutogluonModels/ag-20220308_022732/models/WeightedEnsemble_L3/&#39;},
- &#39;model_fit_times&#39;: {&#39;LightGBM_BAG_L1&#39;: 4.594876289367676,
-  &#39;NeuralNetMXNet_BAG_L1&#39;: 352.5339934825897,
-  &#39;WeightedEnsemble_L2&#39;: 0.15215849876403809,
-  &#39;LightGBM_BAG_L2&#39;: 4.686406135559082,
-  &#39;NeuralNetMXNet_BAG_L2&#39;: 205.63370990753174,
-  &#39;WeightedEnsemble_L3&#39;: 0.15477967262268066},
- &#39;model_pred_times&#39;: {&#39;LightGBM_BAG_L1&#39;: 0.08891510963439941,
-  &#39;NeuralNetMXNet_BAG_L1&#39;: 1.2764437198638916,
-  &#39;WeightedEnsemble_L2&#39;: 0.0006477832794189453,
-  &#39;LightGBM_BAG_L2&#39;: 0.07454371452331543,
-  &#39;NeuralNetMXNet_BAG_L2&#39;: 1.3156356811523438,
-  &#39;WeightedEnsemble_L3&#39;: 0.0006814002990722656},
- &#39;num_bag_folds&#39;: 10,
+ &#39;model_paths&#39;: {&#39;LightGBM_BAG_L1&#39;: &#39;AutogluonModels/ag-20220308_233632/models/LightGBM_BAG_L1/&#39;,
+  &#39;NeuralNetMXNet_BAG_L1&#39;: &#39;AutogluonModels/ag-20220308_233632/models/NeuralNetMXNet_BAG_L1/&#39;,
+  &#39;WeightedEnsemble_L2&#39;: &#39;AutogluonModels/ag-20220308_233632/models/WeightedEnsemble_L2/&#39;,
+  &#39;LightGBM_BAG_L2&#39;: &#39;AutogluonModels/ag-20220308_233632/models/LightGBM_BAG_L2/&#39;,
+  &#39;NeuralNetMXNet_BAG_L2&#39;: &#39;AutogluonModels/ag-20220308_233632/models/NeuralNetMXNet_BAG_L2/&#39;,
+  &#39;WeightedEnsemble_L3&#39;: &#39;AutogluonModels/ag-20220308_233632/models/WeightedEnsemble_L3/&#39;},
+ &#39;model_fit_times&#39;: {&#39;LightGBM_BAG_L1&#39;: 2.4551942348480225,
+  &#39;NeuralNetMXNet_BAG_L1&#39;: 371.61673378944397,
+  &#39;WeightedEnsemble_L2&#39;: 0.14609622955322266,
+  &#39;LightGBM_BAG_L2&#39;: 2.495304584503174,
+  &#39;NeuralNetMXNet_BAG_L2&#39;: 206.01375460624695,
+  &#39;WeightedEnsemble_L3&#39;: 0.14836645126342773},
+ &#39;model_pred_times&#39;: {&#39;LightGBM_BAG_L1&#39;: 0.10708212852478027,
+  &#39;NeuralNetMXNet_BAG_L1&#39;: 1.0824337005615234,
+  &#39;WeightedEnsemble_L2&#39;: 0.0007154941558837891,
+  &#39;LightGBM_BAG_L2&#39;: 0.09382438659667969,
+  &#39;NeuralNetMXNet_BAG_L2&#39;: 1.174767255783081,
+  &#39;WeightedEnsemble_L3&#39;: 0.0007729530334472656},
+ &#39;num_bag_folds&#39;: 5,
  &#39;max_stack_level&#39;: 3,
  &#39;model_hyperparams&#39;: {&#39;LightGBM_BAG_L1&#39;: {&#39;use_orig_features&#39;: True,
    &#39;max_base_models&#39;: 25,
@@ -17527,25 +17692,25 @@ Plot summary of models saved to file: AutogluonModels/ag-20220308_022732/Summary
    &#39;max_base_models_per_type&#39;: 5,
    &#39;save_bag_folds&#39;: True}},
  &#39;leaderboard&#39;:                    model  score_val  pred_time_val    fit_time  \
- 0    WeightedEnsemble_L3   0.444499       2.756220  567.603765   
- 1    WeightedEnsemble_L2   0.442690       1.366007  357.281028   
- 2        LightGBM_BAG_L2   0.442443       1.439903  361.815276   
- 3        LightGBM_BAG_L1   0.438241       0.088915    4.594876   
- 4  NeuralNetMXNet_BAG_L2   0.412175       2.680995  562.762580   
- 5  NeuralNetMXNet_BAG_L1   0.390434       1.276444  352.533993   
+ 0    WeightedEnsemble_L3   0.875204       2.458880  582.729354   
+ 1        LightGBM_BAG_L2   0.873423       1.283340  376.567233   
+ 2    WeightedEnsemble_L2   0.871557       1.190231  374.218024   
+ 3        LightGBM_BAG_L1   0.860857       0.107082    2.455194   
+ 4  NeuralNetMXNet_BAG_L2   0.845776       2.364283  580.085683   
+ 5  NeuralNetMXNet_BAG_L1   0.843948       1.082434  371.616734   
  
     pred_time_val_marginal  fit_time_marginal  stack_level  can_infer  \
- 0                0.000681           0.154780            3       True   
- 1                0.000648           0.152158            2       True   
- 2                0.074544           4.686406            2       True   
- 3                0.088915           4.594876            1       True   
- 4                1.315636         205.633710            2       True   
- 5                1.276444         352.533993            1       True   
+ 0                0.000773           0.148366            3       True   
+ 1                0.093824           2.495305            2       True   
+ 2                0.000715           0.146096            2       True   
+ 3                0.107082           2.455194            1       True   
+ 4                1.174767         206.013755            2       True   
+ 5                1.082434         371.616734            1       True   
  
     fit_order  
  0          6  
- 1          3  
- 2          4  
+ 1          4  
+ 2          3  
  3          1  
  4          5  
  5          2  }</pre>
@@ -17559,7 +17724,7 @@ Plot summary of models saved to file: AutogluonModels/ag-20220308_022732/Summary
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#predicting</span>
@@ -17573,7 +17738,7 @@ Plot summary of models saved to file: AutogluonModels/ag-20220308_022732/Summary
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Remember to set all negative values to zero</span>
@@ -17587,7 +17752,7 @@ Plot summary of models saved to file: AutogluonModels/ag-20220308_022732/Summary
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Same submitting predictions</span>
@@ -17603,7 +17768,7 @@ Plot summary of models saved to file: AutogluonModels/ag-20220308_022732/Summary
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>kaggle competitions submit -c bike-sharing-demand -f submission_new_hpo.csv -m <span class="s2">&quot;new features with hyperparameters&quot;</span>
@@ -17623,7 +17788,7 @@ Plot summary of models saved to file: AutogluonModels/ag-20220308_022732/Summary
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>100%|█████████████████████████████████████████| 188k/188k [00:00&lt;00:00, 286kB/s]
+<pre>100%|█████████████████████████████████████████| 188k/188k [00:00&lt;00:00, 325kB/s]
 Successfully submitted to Bike Sharing Demand</pre>
 </div>
 </div>
@@ -17634,7 +17799,7 @@ Successfully submitted to Bike Sharing Demand</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>kaggle competitions submissions -c bike-sharing-demand <span class="p">|</span> tail -n +1 <span class="p">|</span> head -n <span class="m">6</span>
@@ -17656,10 +17821,10 @@ Successfully submitted to Bike Sharing Demand</pre>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>fileName                     date                 description                        status    publicScore  privateScore  
 ---------------------------  -------------------  ---------------------------------  --------  -----------  ------------  
+submission_new_hpo.csv       2022-03-08 23:48:10  new features with hyperparameters  complete  0.53589      0.53589       
+submission_new_features.csv  2022-03-08 08:03:25  new features                       complete  0.54126      0.54126       
+submission.csv               2022-03-08 07:50:09  first raw submission               complete  1.39250      1.39250       
 submission_new_hpo.csv       2022-03-08 02:37:15  new features with hyperparameters  complete  1.28945      1.28945       
-submission_new_features.csv  2022-03-08 01:51:09  new features                       complete  0.57213      0.57213       
-submission.csv               2022-03-08 01:31:41  first raw submission               complete  1.39329      1.39329       
-submission_new_hpo.csv       2022-03-08 00:27:22  new features with hyperparameters  complete  0.55709      0.55709       
 tail: write error: Broken pipe
 </pre>
 </div>
@@ -17685,7 +17850,7 @@ tail: write error: Broken pipe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Taking the top model score from each training run and creating a line plot to show improvement</span>
@@ -17728,7 +17893,7 @@ tail: write error: Broken pipe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Take the 3 kaggle scores and creating a line plot to show improvement</span>
@@ -17777,17 +17942,26 @@ tail: write error: Broken pipe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The 3 hyperparameters we tuned with the kaggle score as the result</span>
 
+<span class="c1">#This is how I am approaching this problem</span>
+<span class="c1">#in th first model I didnot use any hyperparameter tuning so the value will be 0 for both initial and add_features models</span>
+
+<span class="c1">#the last model I used num_trials=5</span>
+<span class="c1">#num_stakc_levels=1</span>
+<span class="c1">#nun_bag_folds=5</span>
+<span class="c1">#And I have populated the table as above explained.</span>
+<span class="c1">#If my approach is wrong ,kindly advise me correctly</span>
+
 <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
     <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;initial&quot;</span><span class="p">,</span> <span class="s2">&quot;add_features&quot;</span><span class="p">,</span> <span class="s2">&quot;hpo&quot;</span><span class="p">],</span>
     <span class="s2">&quot;hpo1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
-    <span class="s2">&quot;hpo2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
-    <span class="s2">&quot;hpo3&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="mf">1.39329</span><span class="p">,</span> <span class="mf">0.57213</span><span class="p">,</span><span class="mf">1.28945</span> <span class="p">]</span>
+    <span class="s2">&quot;hpo2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="s2">&quot;hpo3&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="mf">1.39329</span><span class="p">,</span> <span class="mf">0.57213</span><span class="p">,</span> <span class="mf">0.53589</span> <span class="p">]</span>
 <span class="p">})</span>
 </pre></div>
 
@@ -17801,7 +17975,7 @@ tail: write error: Broken pipe
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -17837,15 +18011,15 @@ tail: write error: Broken pipe
       <td>initial</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
+      <td>5</td>
       <td>1.39329</td>
     </tr>
     <tr>
       <th>1</th>
       <td>add_features</td>
       <td>0</td>
-      <td>1</td>
       <td>0</td>
+      <td>5</td>
       <td>0.57213</td>
     </tr>
     <tr>
@@ -17853,8 +18027,8 @@ tail: write error: Broken pipe
       <td>hpo</td>
       <td>0</td>
       <td>0</td>
-      <td>3</td>
-      <td>1.28945</td>
+      <td>1</td>
+      <td>0.53589</td>
     </tr>
   </tbody>
 </table>
