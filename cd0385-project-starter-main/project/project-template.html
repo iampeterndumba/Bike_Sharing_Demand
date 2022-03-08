@@ -17213,7 +17213,7 @@ tail: write error: Broken pipe
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">predictor_new_hpo</span> <span class="o">=</span> <span class="n">TabularPredictor</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span><span class="n">eval_metric</span> <span class="o">=</span> <span class="s2">&quot;r2&quot;</span><span class="p">,</span><span class="n">learner_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ignored_columns&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;casual&#39;</span><span class="p">,</span><span class="s1">&#39;registered&#39;</span><span class="p">]})</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
 <span class="n">train_data</span><span class="o">=</span><span class="n">train</span><span class="p">,</span><span class="n">time_limit</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span><span class="n">presets</span><span class="o">=</span><span class="s2">&quot;best_quality&quot;</span><span class="p">,</span>
 <span class="n">hyperparameters</span><span class="o">=</span><span class="n">hyperparameters</span><span class="p">,</span>
-
+<span class="n">hyperparameter_tune_kwargs</span><span class="o">=</span><span class="n">hyperparameter_tune_kwargs</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 
